@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <title>Sportpalya Adatai</title>
+    <meta name="description" content="" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="palya.css" >
+    <script src="index.js"></script>
+  </head>
+  <header>
+    <h1>BestSports Created by <%= username %> </h1>
+    <nav>
+      <ul>
+        <li><a href="/adminview">Vissza</a></li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <form id="ujFormPalyak" action="/register" method="POST">  
+      <label for="tipus">Pálya típusa:</label>
+      <input type="text" id="tipus" name="tipus" required ><br >
+
+      <label for="oraBer">Órabér ára:</label>
+      <input type="number" min="0" id="oraBer" name="oraBer" required><br >
+
+      <label for="cim">Cím:</label>
+      <input type="text" id="cim" name="cim" required ><br >
+
+      <label for="leiras">Leírás:</label>
+      <input type="text" id="leiras" name="leiras" required><br >
+
+      <input type="submit" value="Pályahozzáadása">
+    </form>
+
+    
+  </body>
+</html>

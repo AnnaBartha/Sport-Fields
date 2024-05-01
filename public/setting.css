@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(wp1936431.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+    color: rgba(255, 255, 255, 0.8); /* Világosabb fehér szín */
+    text-align: center;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Átlátszó háttérszín */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+input[type='submit'] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background-color: #45a049;
+}

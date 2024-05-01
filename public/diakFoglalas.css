@@ -1,0 +1,126 @@
+body {
+    background-image: url(R.jpg);
+    background-position: center;
+  }
+  
+  label {
+    font-weight: bold; /* vastag betű */
+    color: azure; /* betű színe */
+    margin-right: 28px;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    display: block;
+  }
+  
+  select {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  input:valid {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  input:invalid {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px dashed red;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .palyakTablazat {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .palyakTablazat th,
+  .palyakTablazat td {
+    border: 5px solid black;
+    padding: 8px;
+  }
+  
+  .palyakTablazat th {
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form {
+    width: 300px; /* Igazítsd a szélességet szükség szerint */
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
+  form input[type="submit"] {
+    background-color: #555;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #333;
+  }
+  
+  table.palyakTablazat {
+    font-weight: bold;
+    color: black;
+  }
+
+  button {
+    text-align: center;
+  }

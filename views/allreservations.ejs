@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <title>Foglalasok</title>
+        <meta name="description" content="" >
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <link rel="stylesheet" href="diakFoglalas.css" >
+    </head>
+  <header>
+    <h1>Here are all the reservations <%= username %></h1>
+    <nav>
+        <ul>
+          <li><a href="/adminview">Vissza</a></li>
+        </ul>
+      </nav>
+  </header>
+  <body>
+        <% if(foglalasok.length != 0){ %>
+            <h2 style="color: aliceblue;">Jelenlegi osszes foglalasunk</h2>
+            <table class="palyakTablazat">
+                <%if(foglalasok.length != 0){%>
+                    <tr><th id="myTableRow">Ora</th><th>Nap</th><th>Honap</th><th>palya id</th><th>foglalas id</th><th>Torol</th></tr>
+                    <% foglalasok.forEach((palya) =>{%>
+                        <tr id="<%= palya.palyaID%>"><td style="color: aliceblue;"><%= palya.ora%></td><td style="color: aliceblue;"><%= palya.nap%></td><td style="color: aliceblue;"><%= palya.honap%></td><td style="color: aliceblue;"><%= palya.palyaID%></td><td style="color: aliceblue;"><%= palya.foglalasID%></td><td> <a href="/torolFoglalasasAdmin?azonosito=<%= palya.foglalasID%>">Torlom ezt a fogalalst</a> </td></tr>
+                    <%});%>
+                <%} else {%>
+                    <h1>Nincs jelenleg foglalas</h1>
+                <%}%>
+              </table>
+       <%} else {%>
+        <h2>Onnek jelenleg nincs foglalasa</h2>
+    <%}%>
+  </body>
+</html>
+

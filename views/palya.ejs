@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <title>Kepek</title>
+    <meta name="description" content="" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="specPalya.css" >
+</head>
+  <h2>Kepek</h2>
+  <div>
+    <%if(fenykep.length != 0){%> <% fenykep.forEach((kep) =>{%>
+    <div class="image-wrapper">
+    <img src="uploadDir/<%=kep.files%>" alt="image" />
+    <button class="delete-button" id="<%= kep.kepID%>">Torol</button>
+  </div>
+    <%});%> <%} else {%>
+    <p>Nincs jelenleg elerheto kepunk az on szamara</p>
+    <%}%>
+  </div>
+  <h2>Kepek feltoltese</h2>
+  <!--KEPFELTOLTO FROM /{TABLA ID}-->
+  <form action="/uploadImages?azonosito=<%=azonosito%>" method="POST" enctype="multipart/form-data">
+    <label for="kep">Valassza ki a kepet:</label>
+    <input type="file" id="kep" name="kepecske" required /><br />
+
+    <input style="background-color: #333;" type="submit" value="Feltoltes" />
+  </form>
+  <script src="palyaSpecScripts.js"></script>
+</html>

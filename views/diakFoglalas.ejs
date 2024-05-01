@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <title>Foglalasok</title>
+        <meta name="description" content="" >
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <link rel="stylesheet" href="diakFoglalas.css" >
+    </head>
+  <header>
+    <h1>Reservations For You <%= username %></h1>
+    <nav>
+        <ul>
+          <li><a href="/diakview">Vissza</a></li>
+        </ul>
+      </nav>
+  </header>
+  <body>
+    <form action="/foglalasok" method="post">
+        <label for="hour">Ora:</label>
+        <input type="number" id="hour" name="hour" required><br>
+    
+        <label for="day">Nap:</label>
+        <input type="number" id="day" name="day" required><br>
+
+        <label for="month">Honap:</label>
+        <input type="number" id="month" name="month" required><br>
+
+        <label for="pid">Palya id:</label>
+        <input type="number" id="pid" name="pid" required><br>
+    
+        <input type="submit" value="Foglalás elküldése">
+    </form>
+        <% if(foglalasok.length != 0){ %>
+            <h2>Onnek jelenleg van foglalasa</h2>
+            <table class="palyakTablazat">
+                <%if(foglalasok.length != 0){%>
+                    <tr><th id="myTableRow">Ora</th><th>Nap</th><th>Honap</th><th>palya id</th><th>foglalas id</th><th>Torol</th></tr>
+                    <% foglalasok.forEach((palya) =>{%>
+                        <tr id="<%= palya.palyaID%>"><td><%= palya.ora%></td><td><%= palya.nap%></td><td><%= palya.honap%></td><td><%= palya.palyaID%></td><td><%= palya.foglalasID%></td><td> <a href="/torolFoglalas?azonosito=<%= palya.foglalasID%>">Torlom ezt a fogalalst</a> </td></tr>
+                    <%});%>
+                <%} else {%>
+                    <h1>Nincs jelenleg elerheto palyank az on szamara</h1>
+                <%}%>
+              </table>
+       <%} else {%>
+        <h2>Onnek jelenleg nincs foglalasa</h2>
+    <%}%>
+  </body>
+</html>
+

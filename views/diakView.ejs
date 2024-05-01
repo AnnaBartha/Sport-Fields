@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head.ejs',{title: 'BestSports'})%>
+  <header>
+    <h1>BestSports For You <%= username %></h1>
+    <nav>
+      <ul>
+        <li><a href="/settings">Setting</a></li>
+        <li><a href="/foglalasok">Foglalasok</a></li>
+        <li><a href="/logout">Log out</a></li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <div class="container">
+    <form action="/diakview" method="POST">
+        <label for="tipus">Palya Tipus:</label>
+        <select id="tipus" name="tipus">
+          <option value="">--valassz--</option>
+          <option value="Kosar">Kosar</option>
+          <option value="Foci">Foci</option>
+          <option value="tenisz">tenisz</option>
+          <option value="pingpong">pingpong</option>
+          <option value="Kezilabda">Kezilabda</option>
+          <option value="vole">Vole</option>
+          <option value="AmFoci">Amerikai Foci</option>
+        </select>
+  
+        <label for="min">Minimum oraber:</label>
+        <input type="number" id="min" name="min" >
+  
+        <label for="max">Maximum oraber:</label>
+        <input type="number" id="max" name="max" >
+        
+        <input type="submit" value="Kereses">
+      </form>
+    </div>
+      <table class="palyakTablazat">
+        <%if(palyak.length != 0){%>
+            <tr><th id="myTableRow">Palya ID</th><th>Tipus</th><th>Oraber</th><th>Cim</th><th>Leiras</th></tr>
+            <% palyak.forEach((palya) =>{%>
+                <tr id="<%= palya.palyaID%>"><td><%= palya.palyaID%></td><td><%= palya.tipus%></td><td><%= palya.oraBer%></td><td><%= palya.cim%></td><td colspan="5" class="hiddenInfo"><span class="expanded-content"></span></td><td> <a href="/diakspecpalya?azonosito=<%= palya.palyaID%>">Lasd Palya</a> </td></tr>
+            <%});%>
+        <%} else {%>
+            <h1>Nincs jelenleg elerheto palyank az on szamara</h1>
+        <%}%>
+      </table>
+      <script src="scripts.js">
+      </script>
+  </body>
+</html>

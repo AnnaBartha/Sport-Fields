@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Kepek Feltoltese</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="palya.css">
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <form action="/uploadImages" method="POST" enctype="multipart/form-data">
+            <label for="azonosito">ID:</label>
+            <input type="number" id="azonosito" name="azonosito" required><br>
+          
+            <label for="kep">Valassza ki a kepet:</label>
+            <input type="file" id="kep" name="kepecske" required><br>
+          
+            <input type="submit" value="Feltoltes">
+          </form>
+    </body>
+</html>

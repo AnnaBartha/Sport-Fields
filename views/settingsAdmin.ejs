@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <title>Settings</title>
+        <meta name="description" content="" >
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <link rel="stylesheet" href="setting.css" >
+    </head>
+<body>
+  <h1>Password Change</h1>
+  
+  <form action="/setNewPwAdmin" method="POST">
+    <label for="username">Current Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="currentPassword">Current Password:</label>
+    <input type="password" id="currentPassword" name="currentPassword" required>
+
+    <label for="newPassword">New Password:</label>
+    <input type="password" id="newPassword" name="newPassword" required>
+
+    <label for="confirmPassword">Confirm New Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+    <input type="submit" value="Change Password">
+  </form>
+</body>
+</html>
